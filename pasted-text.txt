@@ -1,0 +1,525 @@
+I talked yoo in another sesión about an IFBB app to do the following, I want you to create a full mockups without payung atention to the tech stack but only create the full website mockups without backend, that actually has all that we e talled about : Perfect — this is a fantastic project idea, and you’re absolutely right: most federations (including IFBB) still run their backend like it’s 2005. Let’s structure this properly so you can start designing and pitching it fast.---🧩 1. Vision SummaryYou want to build an IFBB CRM / Event Platform that modernizes all competitor, judge, and organization workflows into one digital system.🎯 Core GoalsCentralize all event data (competitors, categories, payments, songs, photos, results).Automate registration and payment collection.Improve the competitor experience (upload assets, check lineup, results).Provide federation tools (analytics, feedback, event planning).Enable fans and family to follow live results, streaming, and replays.---🏗️ 2. Core Modules🔹 Competitor PortalRegistration for upcoming events.Automatic category matching based on height/weight.Upload song (MP3, WAV) and posing photo.Secure payment gateway (MercadoPago, Stripe, PayPal).Auto-generated invoice + confirmation email.Dashboard of past competitions, scores, and photos.Download certificates or official results.🔹 Judge & Admin DashboardManage events, categories, competitors, and scores.Upload score sheets or record results live.Generate ranking reports and winner certificates.Add announcements and notifications.🔹 Media & Content HubUpload and manage event photos/videos.Watermarked previews, automatic linking to each athlete.Purchase photos/videos directly online.Livestream integration (YouTube API or embedded player).🔹 Feedback & CommunicationAnonymous or signed feedback forms post-event.Organizer notifications via email or in-app.Internal news board for IFBB members.🔹 Public Portal / AppCalendar of events with dates, cities, registration deadlines.Live leaderboard and streaming links.Competitor profiles with results history.Push notifications (optional mobile app).---⚙️ 3. Technical Stack (Suggested)Layer Recommended ToolsFrontend React + Next.js (SSR for SEO) + TailwindBackend Node.js (NestJS or Express) or Django RESTDatabase PostgreSQL (for structured data) + S3 / Cloud Storage for mediaPayments MercadoPago API (Argentina-friendly) or StripeFile Storage AWS S3 / Google Cloud StorageAuthentication Auth0 or Firebase AuthAdmin Panel AdminJS or custom React panelStreaming YouTube API, Vimeo, or RTMP ingestNotifications OneSignal / Firebase Cloud Messaging---💡 4. Future-Ready Add-onsAI feedback analyzer: sentiment and keyword tracking from reviews.Performance analytics for competitors (based on scores + categories).IFBB federation dashboard (ranking points, attendance stats).API for gyms and coaches to link athlete profiles.Sponsor integration (banners, athlete deals, discount codes).---🧭 5. Next Steps1. Define MVP scope:Registration + Payment + Song Upload + Admin Dashboard.That’s enough for the first version.2. Design UX mockups:Pages: Home, Event List, Register, Upload Song, Payment, Confirmation, Admin Events, Competitor Table.3. Database schema design:Tables: users, competitors, events, categories, registrations, payments, songs, photos, feedback.4. Integrate Payment + File Upload flows.5. Add optional features: streaming, feedback, analytics.---🧱 6. MVP Deliverable ExampleIf you want, I can draft:✅ Database schema (PostgreSQL or Prisma model).✅ UI flow (React or Figma mockup).✅ API endpoints list.✅ Admin dashboard base structure.---Would you like me to start by drafting the database schema + UI flow for MVP (registration + payment + song upload + dashboard)?That’s the foundation of the whole IFBB CRM.
+
+This is an excellent project. A centralized, modern platform is exactly what the industry needs.
+
+Based on our previous conversation, I will now lay out a full, text-based mockup and sitemap for the entire website. This will describe every page, its components, and how users flow between them, focusing purely on the user experience (UX) and flow, with no backend code.
+
+Here is the complete mockup plan for the IFBB platform.
+
+Sitemap (Overall Structure)
+The site is divided into three main user-facing sections:
+
+The Public Portal (For fans, visitors, and potential competitors)
+
+The Competitor Portal (Logged-in area for registered athletes)
+
+The Admin/Judge Dashboard (Logged-in area for staff and federation officials)
+
+Part 1: The Public Portal (Fan & Visitor View)
+This is what everyone sees when they first visit the site.
+
+1.1. Page: Homepage
+Navigation Bar:
+
+Logo (IFBB [Your Region])
+
+Links: Events | Live Results | Media (Photos/Video) | Competitor Directory
+
+Buttons: Login | Register as Competitor
+
+Hero Section:
+
+Full-width background image from a recent competition.
+
+Headline: "The Official Hub for IFBB [Your Region]"
+
+Subtitle: "Register for events, view live results, and track your progress."
+
+Primary CTA Button: Register for an Event
+
+Secondary CTA Button: View Live Results
+
+Upcoming Events Section:
+
+Title: "Upcoming Events"
+
+A horizontal-scrolling carousel (or grid) of the next 3-4 events.
+
+Each Event Card contains:
+
+Event Poster Image
+
+Event Name (e.g., "National Championship 2026")
+
+Date & City
+
+Status Tag (e.g., Registration Open, Upcoming, Live)
+
+Federation News & Announcements Section:
+
+Title: "Latest News"
+
+A grid of 3 blog-style posts (e.g., "New Judging Criteria," "Sponsor Spotlight").
+
+Footer:
+
+Links: About Us | Contact | Rules & Regulations | Sponsors
+
+Social Media Icons (Instagram, YouTube, etc.)
+
+1.2. Page: Events (Calendar)
+Header: "Event Calendar"
+
+Filter/View Toggles:
+
+Buttons: List View | Calendar View
+
+Filters (Dropdowns): By City | By Event Type (Pro/Amateur) | By Status
+
+Main Content (List View):
+
+A chronological list of all events (past and future).
+
+Each list item shows:
+
+Date
+
+Event Name
+
+Location
+
+Status (Registration Open, Closed, Results Available)
+
+Button: View Details
+
+On click View Details -> Leads to 1.3. Event Detail Page
+
+1.3. Page: Event Detail
+Header: "[Event Name] - [Date]"
+
+Sub-Navigation Tabs: Info | Categories | Results (tab only appears after the event)
+
+Info Tab (Default):
+
+Location (with embedded Google Map)
+
+Registration Deadline
+
+Event Schedule
+
+Sponsor Logos
+
+Main CTA Button: Register Now (if open) or View Results (if finished)
+
+Categories Tab:
+
+A list of all categories offered (e.g., "Men's Physique - Class A," "Bikini - Novice").
+
+Results Tab:
+
+A list of categories. Clicking one expands to show the winners (1st, 2nd, 3rd) with names.
+
+Button: View Full Score Sheets (links to a PDF or the live leaderboard page).
+
+On click Register Now -> Leads to 2.1. Registration Flow
+
+1.4. Page: Live Results & Streaming
+Header: "Live Event: [Event Name]"
+
+Main Content:
+
+Large embedded video player (YouTube Live or similar).
+
+Live Leaderboard Section (Below video):
+
+Dropdown: Select Category to View (e.g., "Men's Physique - Open Class B")
+
+Table:
+
+Competitor #
+
+Name
+
+Total Score
+
+Place
+
+This table updates in real-time as judges submit scores.
+
+1.5. Page: Media Hub (Photos/Videos)
+Header: "Event Galleries"
+
+Filter Bar:
+
+Search: "Search by event or competitor name/number"
+
+Main Content:
+
+A grid of all events, organized by "Galleries."
+
+Clicking an event (e.g., "National Championship 2026") leads to...
+
+Page: Event Gallery Detail
+
+A grid of watermarked photo thumbnails.
+
+Filters: By Category | By Competitor #
+
+On click photo thumbnail: A popup modal appears.
+
+Larger watermarked image.
+
+Info: Competitor: [Name], Category: [Category]
+
+Button: Buy This Photo (High-Res, No Watermark) -> (Leads to a simple cart/checkout).
+
+1.6. Page: Competitor Directory
+Header: "Competitor Directory"
+
+Search Bar: "Find an Athlete"
+
+Filter: A-Z
+
+Main Content:
+
+A grid of Competitor Profile Cards (Name, Photo, Team/Gym).
+
+On click card -> Leads to 1.7. Public Competitor Profile
+
+1.7. Page: Public Competitor Profile
+Header: Athlete's Name
+
+Profile Section:
+
+Profile Photo
+
+Team/Gym
+
+Short Bio
+
+Results History Section:
+
+Title: "Competition History"
+
+A table listing:
+
+Date
+
+Event
+
+Category
+
+Placing
+
+Media Section:
+
+Title: "My Public Gallery"
+
+A grid of all photos this competitor has been tagged in and has purchased (or made public).
+
+Part 2: The Competitor Portal (Logged-in Athlete View)
+This is what athletes see after Login or Register.
+
+2.1. Flow: New Competitor Registration
+Step 1: Account
+
+Form Fields: Email, Password, Confirm Password
+
+Step 2: Profile
+
+Form Fields: First Name, Last Name, Date of Birth, Height (cm), Weight (kg)
+
+This data is used for "Automatic category matching."
+
+Step 3: Verification
+
+Form Field: IFBB Member ID # (if they have one)
+
+Upload: "Proof of Membership" (if required)
+
+Step 4: Success
+
+Message: "Your account is created! You are now logged in."
+
+Redirect -> 2.2. Competitor Dashboard
+
+2.2. Flow: Event Registration (After clicking Register Now on an event)
+Step 1: Event & Categories
+
+Event Name: "[Event Name]" (pre-filled)
+
+"Suggested Categories for You" (based on profile height/weight/age):
+
+Checkbox: Men's Physique - Class B (Based on your height)
+
+"All Categories":
+
+Checkboxes for all other categories (e.g., Novice, Open, etc.)
+
+Step 2: Asset Upload
+
+Title: "Upload Your Assets"
+
+Music Upload:
+
+File Dropzone: "Drag & Drop Your Posing Song (MP3 or WAV)"
+
+Photo Upload:
+
+File Dropzone: "Upload Posing Photo (for judge identification)"
+
+Step 3: Payment
+
+Title: "Registration Summary"
+
+Line Item: Event Registration Fee - $100
+
+Line Item: Category: Men's Physique - $50
+
+Line Item: Category: Novice - $50
+
+Total: $200
+
+Payment Buttons: Pay with MercadoPago | Pay with Credit Card (Stripe)
+
+Step 4: Confirmation
+
+Title: "You're Registered!"
+
+Message: "Confirmation and invoice have been sent to your email."
+
+Button: Go to My Dashboard
+
+Button: Download Invoice (PDF)
+
+2.3. Page: Competitor Dashboard (Main)
+Sidebar Navigation:
+
+Dashboard
+
+My Events
+
+My Results & Certificates
+
+My Media (Purchased)
+
+My Profile
+
+Submit Feedback
+
+Logout
+
+Main Content Area:
+
+Headline: "Welcome back, [Athlete Name]"
+
+Widget 1: "My Upcoming Event"
+
+Shows the next event they are registered for.
+
+Event Name, Date
+
+Lineup/Competitor Number (e.g., "Your Number: #104")
+
+Status: Song: Approved, Payment: Confirmed
+
+Button: Manage Event
+
+Widget 2: "Recent Notifications"
+
+"Your photos from [Event] are ready!"
+
+"Reminder: [Event] is 1 week away."
+
+Widget 3: "My Recent Results"
+
+A list of the last 1-2 placings.
+
+2.4. Page: My Events
+Tabs: Upcoming Events | Past Events
+
+Upcoming Events Tab:
+
+A list of events they are registered for.
+
+For each event:
+
+Button: Manage Registration -> Allows them to change their song or update info before the deadline.
+
+Past Events Tab:
+
+A list of all events they've competed in.
+
+Button: View Results
+
+2.5. Page: My Results & Certificates
+Header: "My Competition History"
+
+Main Content:
+
+A detailed table of all past results.
+
+Columns: Date | Event | Category | Placing
+
+Action Column:
+
+Button: Download Certificate (PDF)
+
+Button: View Score Sheet
+
+2.6. Page: My Media (Purchased)
+Header: "My Purchased Photos & Videos"
+
+Main Content:
+
+A grid of all media they have purchased.
+
+All images are high-resolution and have no watermark.
+
+Button on each: Download
+
+2.7. Page: Submit Feedback
+Header: "Event Feedback"
+
+Form:
+
+Dropdown: Select Event to Review (lists past events)
+
+Rating: 5-Star selection
+
+Text Box: "Your Comments"
+
+Checkbox: Submit Anonymously
+
+Button: Submit Feedback
+
+Part 3: The Admin & Judge Dashboard (Staff View)
+This is a completely separate interface, likely on a subdomain (e.g., admin.ifbb-site.com).
+
+3.1. Page: Admin Dashboard (Main)
+Sidebar Navigation:
+
+Dashboard
+
+Events
+
+Competitors
+
+Scoring
+
+Media Hub
+
+Feedback Inbox
+
+Announcements
+
+Settings
+
+Main Content:
+
+KPI Widgets:
+
+Total Revenue (This Month)
+
+New Registrations (This Week)
+
+Pending Feedback
+
+Songs to Review
+
+3.2. Page: Events Management
+Header: "Events"
+
+Button: + Create New Event
+
+Main Content:
+
+A table of all events.
+
+Columns: Event Name, Date, Status, Registrations, Revenue
+
+Action Buttons: Edit | View Dashboard | Delete
+
+On click View Dashboard -> Leads to 3.3. Single Event Dashboard
+
+3.3. Page: Single Event Dashboard
+Header: "[Event Name] - Management"
+
+Sub-Navigation Tabs: Overview | Competitors | Categories | Scoring | Media
+
+Overview Tab:
+
+Stats: Total Registered, Total Revenue, Competitors per Category.
+
+Competitors Tab:
+
+A searchable, filterable table of ALL registered competitors for this event.
+
+Columns: Name, Competitor #, Categories, Payment Status, Song Status
+
+Actions: Edit, Refund, Approve Song
+
+Button: Download All Songs (ZIP)
+
+Scoring Tab:
+
+Button: Open Live Scoring
+
+Button: Generate Winner Certificates (Bulk PDF generation)
+
+Button: Publish Results to Public Site
+
+3.4. Page: Live Scoring (Judge Interface)
+This page is designed for tablets.
+
+Header: "Live Scoring: [Event] - [Category]"
+
+Main Content:
+
+A simple grid.
+
+Rows: Competitor #
+
+Columns: Judge 1 Score, Judge 2 Score, ... Final Score
+
+Each score cell is an input field.
+
+As scores are entered, the "Final Score" and "Place" auto-calculate.
+
+Footer:
+
+Button: Finalize & Lock Scores for this Category
+
+3.5. Page: Media Hub (Admin)
+Header: "Media Management"
+
+Uploader:
+
+Dropdown: Select Event to Upload For
+
+File Dropzone: "Drag & Drop All Event Photos/Videos (Batch Upload)"
+
+Media Tagging Interface:
+
+A queue of uploaded, untagged photos.
+
+"Tag this photo":
+
+Input: Competitor #
+
+Input: Category
+
+Button: Save Tags
+
+This links the photo to the public gallery and the competitor's profile.
+
+3.6. Page: Feedback Inbox
+Header: "Feedback"
+
+Main Content:
+
+An email-inbox-style list of all feedback submissions.
+
+Filter: By Event | By Rating
+
+Each item shows: Event, Rating, Comment Snippet, Status (Anonymous or Named).

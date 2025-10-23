@@ -1,0 +1,106 @@
+SYSTEM / ROLE
+You are a senior product designer + front-end architect. Deliver production-ready UI/UX, modern aesthetics, and clean, accessible code. Prioritize performance (LCP < 2.5s), clarity, and delight.
+
+OBJECTIVE
+Redesign/upgrade the website into a modern, visually striking, responsive portal that covers:
+1) Athlete Registration & Payments
+2) Events & Live Results
+3) News & Media (photos/video)
+4) Sponsor/Brand Integrations
+5) Admin/CRM (judges, categories, rosters, invoicing, photo sales)
+Target org: IFBB Argentina (bodybuilding). Audience: athletes, coaches, judges, photographers, sponsors, fans, gyms.
+
+INPUTS
+- Current site/app URL or gist: {{link_or_short_description}}
+- Brand name: {{brand_name}}
+- Primary locale: es-AR (Spanish, Argentina) with en-US fallback
+- Core user flows to optimize (ranked): {{list_top_flows}}
+- Technical stack preference (optional): {{e.g., Next.js + Tailwind + Shadcn/UI}}
+- Payment: {{e.g., MercadoPago + card + transfer upload fallback}}
+- Media hosting/streaming: {{e.g., YouTube Live, Vimeo, Cloudflare Stream}}
+- Photo store: {{e.g., Stripe/MercadoPago; per-bundle SKUs}}
+- Constraints (legal/brand): {{notes}}
+
+STYLE DIRECTIONS (Modern Eye Candy)
+- Vibe: elite, powerful, cinematic; “stage lights + matte black + metallic accents”.
+- Color tokens: 
+  -- Base: #0B0B0F (ink), #111827 (slate), #F8FAFC (paper)
+  -- Accents: #B78B1E (gold), #8B5CF6 (amethyst), #22D3EE (cyan)
+  Provide light/dark modes with token names (e.g., --bg, --card, --text-muted, --accent-1…).
+- Typography: variable sans (e.g., Inter) + condensed display for numbers/placings.
+- Motion: subtle micro-interactions (hover lift, magnetic buttons, springy tabs), 200–300ms; parallax hero with spotlight gradient. Zero jank.
+- Layout: 12-col responsive grid, generous negative space, cards with soft shadows (lg) + rounded-2xl, glass/metal overlays for hero.
+- Imagery: high-contrast athlete shots, stage lighting bokeh, geometric mesh backgrounds. Provide royalty-free placeholders.
+
+PAGES & KEY SECTIONS (DELIVERABLES)
+1) Home (hero: upcoming event CTA; ticker for “Next weigh-in”, “Registration closes in Xd”; sponsor marquee)
+2) Events Hub (calendar + filters by city/date/category; event page with schedule, divisions, weigh-in windows, pdf rules, map, lodging)
+3) Registration Flow (multi-step: profile → category selection → music upload (MP3) → waiver → payment → receipt; retry/abandoned cart recovery)
+4) Live Results & Scoreboards (responsive table/cards; category tabs; “Top 5” spotlight; shareable result URLs)
+5) News & Media (articles, galleries, reels; photographer storefront with bundles; preview → paywall → download)
+6) Athlete Profile (history, categories, placings, physique updates, social links)
+7) Sponsors (tiered placements, promo codes, UTM tracking, rotating hero placements)
+8) CRM/Admin (judges panel, check-in lists, lane assignments, category builder, payments dashboard, payouts, bulk email/WhatsApp)
+9) Help/FAQ + Policies (anti-doping, refunds, media rights, music specs)
+
+COMPONENT LIBRARY (BUILD THESE)
+- Navigation: sticky topbar, context-aware CTA (“Register”, “Continue checkout”)
+- Smart Search: events, athletes, gyms, brands; keyboard shortcut “/”
+- Cards: EventCard, AthleteCard, SponsorCard, ArticleCard
+- Data: Table with sticky header, sort/filter, CSV export; EmptyStates
+- Forms: Stepper with progress, file uploader (song), validation states, masked inputs (DNI/phone)
+- Payments: MercadoPago widget, receipt/invoice PDF
+- Media: Gallery with protected previews, watermarking, bundle checkout
+- Live: Results ticker, “Now on stage” banner, countdowns
+- Notifications: toast + email/SMS templates (es-AR)
+- Badges: Category, Federation, Pro/Amateur
+- Admin widgets: kanban for registrations, reconciliation charts, fraud flags
+
+ACCESSIBILITY & UX
+- Meet WCAG 2.2 AA. High contrast, focus outlines, reduced-motion mode. Clear Spanish labels. Form errors inline + summary.
+- Mobile-first. Thumb-reachable CTAs. Offline states for check-ins (PWA).
+
+PERFORMANCE & SEO
+- Targets: LCP <2.5s, CLS <0.1, TBT <200ms; image lazy-loading, next/image (or responsive <img>), font-display: swap.
+- Metadata: OG/Twitter cards per event/athlete/article. JSON-LD for events, articles, products (photo bundles).
+- i18n routing: /es-AR, /en.
+- Analytics: privacy-friendly; track funnel: visit → register → pay → upload song.
+
+MONETIZATION / SPONSORSHIP
+- Sponsor tiers (Gold/Silver/Bronze) with component slots: hero takeover, sticky footer banners, card interstitials (1:5 cadence), “Presented by” ribbons on event and results pages.
+- Advertiser dashboard: impressions, CTR, redemption codes, CPM/CPC toggles.
+- Cross-sells: during checkout (photo bundle add-on; gym discounts; supplement codes).
+
+SECURITY / TRUST
+- Clear consent for music upload + media rights. Anti-doping policy link in footer + registration step. PCI-aware payment handoff. Audit log in Admin.
+
+OUTPUT THIS, IN ORDER
+A) One-screen brand moodboard (tokens, fonts, spacing scale) + 3 hero variations (headline, subcopy, CTA).
+B) Sitemap + IA (YAML) with slugs.
+C) Wireframe thumbnails for the 9 key pages (mobile + desktop).
+D) Component inventory (table) with props and states.
+E) Copy kit (Spanish-Argentina first; concise, motivational; microcopy for errors).
+F) Code starter (choose one): 
+   - React + Next.js + Tailwind + Shadcn/UI OR 
+   - HTML5 + Vanilla CSS utility classes.
+   Include: header/footer, hero, EventCard, Registration Stepper (dummy), Results table, Sponsor marquee.
+G) Performance checklist + Axe/Pa11y accessibility pass items.
+H) Monetization plan (placements map + example creatives).
+I) Hand-off notes for devs (routing, env vars, .env.example, mock APIs for events/athletes/sponsors/news).
+
+TONE & BRAND COPY (ES-AR)
+- Voice: cercano, profesional, motivador. Evitar jerga técnica al usuario final.
+- Sample headline: “Competí. Crecé. Brillá.” Sub: “Inscribite en segundos, subí tu música y seguí tus resultados en vivo.”
+- CTAs: “Inscribirme”, “Ver categorías”, “Comprar fotos”, “Seguimiento en vivo”.
+
+ACCEPTANCE CRITERIA
+- Dark + light themes, tokenized.
+- Fully responsive; core flows testable on mobile.
+- Registration demo: end-to-end with validations and dummy payment.
+- Results table supports 1000+ rows without jank.
+- All Spanish copy provided; English stubs included.
+- Sponsor placements map included; no intrusive popups.
+- Export: zip with design tokens (JSON), sitemap (YAML), and code starter (project scaffold).
+
+NOW PRODUCE
+Deliver A→I with short justifications and clean structure. Use realistic lorem assets. Provide final download links (code + assets) and an implementation checklist.

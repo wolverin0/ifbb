@@ -1,0 +1,26 @@
+<svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="megGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B78B1E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FBBF24;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="80" fill="none" />
+
+  <!-- Stylized M -->
+  <path d="M 30 60 L 30 25 L 45 45 L 60 25 L 60 60" stroke="url(#megGrad)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Stylized A -->
+  <path d="M 75 60 L 85 25 L 95 60" stroke="url(#megGrad)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="77" y1="45" x2="93" y2="45" stroke="url(#megGrad)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Stylized G -->
+  <path d="M 110 25 L 105 25 L 105 60 L 115 60 L 115 42 L 110 42" stroke="url(#megGrad)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Text below -->
+  <text x="100" y="72" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="url(#megGrad)" text-anchor="middle" letter-spacing="1">
+    MEGATHLON
+  </text>
+</svg>

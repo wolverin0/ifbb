@@ -1,0 +1,25 @@
+<svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bsnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B78B1E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FBBF24;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="80" fill="none" />
+
+  <!-- B -->
+  <path d="M 40 55 L 40 20 L 60 20 Q 68 20 68 28 Q 60 36 40 36 M 40 36 L 62 36 Q 70 36 70 45 Q 70 55 62 55 L 40 55" stroke="url(#bsnGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- S -->
+  <path d="M 85 20 Q 85 20 100 20 Q 110 20 110 27 Q 110 33 95 38 Q 80 43 80 50 Q 80 55 90 55 Q 105 55 105 55" stroke="url(#bsnGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- N -->
+  <path d="M 130 55 L 130 20 L 155 55 L 155 20" stroke="url(#bsnGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Text below -->
+  <text x="100" y="72" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="url(#bsnGrad)" text-anchor="middle" letter-spacing="2">
+    BSN
+  </text>
+</svg>
