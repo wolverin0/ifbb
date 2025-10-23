@@ -10,7 +10,7 @@ const sponsors = [
     tier: 'Gold',
     description: 'Cadena líder de gimnasios en Argentina con más de 50 sucursales en todo el país.',
     website: 'https://megathlon.com.ar',
-    logo: '/sponsors/megathlon-logo.svg',
+    logo: '/megatlon.png',
   },
   {
     id: '2',
@@ -18,7 +18,7 @@ const sponsors = [
     tier: 'Gold',
     description: 'Suplementos deportivos y nutrición especializada para atletas de alto rendimiento.',
     website: 'https://starnutrition.com.ar',
-    logo: '/sponsors/starnutrition-logo.svg',
+    logo: '/star.png',
   },
   {
     id: '3',
@@ -26,7 +26,7 @@ const sponsors = [
     tier: 'Silver',
     description: 'Red de gimnasios premium con equipamiento de última generación.',
     website: 'https://gfitness.com.ar',
-    logo: '/sponsors/gfitness-logo.svg',
+    logo: '/gfitness.png',
   },
   {
     id: '4',
@@ -34,7 +34,7 @@ const sponsors = [
     tier: 'Silver',
     description: 'Marca internacional de suplementación deportiva de calidad premium.',
     website: 'https://bsnonline.com',
-    logo: '/sponsors/bsn-logo.svg',
+    logo: '/bsn.png',
   },
   {
     id: '5',
@@ -42,7 +42,7 @@ const sponsors = [
     tier: 'Silver',
     description: 'Suplementos científicamente formulados para máximo rendimiento.',
     website: 'https://muscletech.com',
-    logo: '/sponsors/muscletech-logo.svg',
+    logo: '/muscletech.png',
   },
   {
     id: '6',
@@ -50,7 +50,7 @@ const sponsors = [
     tier: 'Bronze',
     description: 'Suplementos y nutrición deportiva accesible para todos los atletas.',
     website: 'https://enasport.com.ar',
-    logo: '/sponsors/enasport-logo.svg',
+    logo: '/ena.png',
   },
 ];
 

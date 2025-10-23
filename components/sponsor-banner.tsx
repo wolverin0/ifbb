@@ -3,12 +3,12 @@
 import Image from "next/image";
 
 const sponsors = [
-  { name: 'Megathlon', logo: '/sponsors/megathlon-logo.svg' },
-  { name: 'Star Nutrition', logo: '/sponsors/starnutrition-logo.svg' },
-  { name: 'GFitness', logo: '/sponsors/gfitness-logo.svg' },
-  { name: 'BSN', logo: '/sponsors/bsn-logo.svg' },
-  { name: 'MuscleTech', logo: '/sponsors/muscletech-logo.svg' },
-  { name: 'ENA Sport', logo: '/sponsors/enasport-logo.svg' },
+  { name: 'Megathlon', logo: '/megatlon.png' },
+  { name: 'Star Nutrition', logo: '/star.png' },
+  { name: 'GFitness', logo: '/gfitness.png' },
+  { name: 'BSN', logo: '/bsn.png' },
+  { name: 'MuscleTech', logo: '/muscletech.png' },
+  { name: 'ENA Sport', logo: '/ena.png' },
 ];
 
 export function SponsorBanner() {

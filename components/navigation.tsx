@@ -70,6 +70,18 @@ export function Navigation() {
               {"Patrocinadores"}
             </Link>
             <Link
+              href="/reglas"
+              className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
+            >
+              {"Reglas"}
+            </Link>
+            <Link
+              href="/academia"
+              className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
+            >
+              {"Academia"}
+            </Link>
+            <Link
               href="/demo"
               className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
             >
@@ -177,6 +189,18 @@ export function Navigation() {
                 className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
               >
                 {"Patrocinadores"}
+              </Link>
+              <Link
+                href="/reglas"
+                className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
+              >
+                {"Reglas"}
+              </Link>
+              <Link
+                href="/academia"
+                className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
+              >
+                {"Academia"}
               </Link>
               <Link
                 href="/demo"
