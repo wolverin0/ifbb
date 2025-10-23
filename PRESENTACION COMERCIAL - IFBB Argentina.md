@@ -1,4 +1,4 @@
-# PLATAFORMA DIGITAL IFBB ARGENTINA
+﻿# PLATAFORMA DIGITAL IFBB ARGENTINA
 ## Sistema Integral de Gestión de Competencias de Fisicoculturismo
 
 ---
