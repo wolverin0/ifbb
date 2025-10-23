@@ -48,7 +48,8 @@ export default function CoachAthletesPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
+          {/* Desktop table view */}
+          <div className="hidden md:block overflow-x-auto">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-border">
@@ -69,6 +70,24 @@ export default function CoachAthletesPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile card view */}
+          <div className="md:hidden space-y-4">
+            {filteredAthletes.map(a => (
+              <Card key={a.id} className="bg-muted/30">
+                <CardContent className="pt-4">
+                  <div className="space-y-2">
+                    <p className="font-bold text-lg">{a.name}</p>
+                    <p className="text-sm text-muted-foreground">{a.email}</p>
+                    <div className="flex gap-2 flex-wrap">
+                      <Badge variant="secondary">{a.category}</Badge>
+                      <Badge className={a.status === "active" ? "bg-green-600/20 text-green-700" : "bg-gray-600/20 text-gray-700"}>{a.status}</Badge>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </CardContent>
       </Card>
