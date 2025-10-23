@@ -2,13 +2,14 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, Calendar, Trophy, Camera, User, Settings, LogOut, Bell } from "lucide-react"
+import { Home, Calendar, Trophy, Camera, User, Settings, LogOut, Bell, TrendingUp } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
   { href: '/dashboard', icon: Home, label: 'Resumen' },
   { href: '/dashboard/mis-eventos', icon: Calendar, label: 'Mis Eventos' },
   { href: '/dashboard/mis-resultados', icon: Trophy, label: 'Mis Resultados' },
+  { href: '/dashboard/progreso', icon: TrendingUp, label: 'Progreso' },
   { href: '/dashboard/mis-fotos', icon: Camera, label: 'Mis Fotos' },
   { href: '/dashboard/notificaciones', icon: Bell, label: 'Notificaciones' },
   { href: '/dashboard/mi-perfil', icon: User, label: 'Mi Perfil' },
@@ -52,7 +53,7 @@ export function DashboardSidebar() {
             className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted/50 hover:text-foreground transition-colors"
           >
             <LogOut className="w-5 h-5" />
-            <span>Cerrar Sesión</span>
+            <span>Cerrar Sesion</span>
           </Link>
       </div>
     </aside>

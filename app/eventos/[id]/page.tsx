@@ -15,6 +15,7 @@ import {
   ArrowRight,
   Share2,
   Heart,
+  Zap,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -117,7 +118,17 @@ export default function EventDetailPage({ params }: { params: { id: string } }) 
                 <Share2 className="w-5 h-5" />
               </Button>
             </div>
-            <div className="flex items-center gap-3 w-full sm:w-auto">
+            <div className="flex items-center gap-3 w-full sm:w-auto flex-wrap">
+              <Button
+                variant="outline"
+                className="flex-1 sm:flex-none border-[#22D3EE] text-[#22D3EE] hover:bg-[#22D3EE] hover:text-[#0B0B0F] bg-transparent"
+                asChild
+              >
+                <Link href={`/eventos/${event.id}/leaderboard`} className="flex items-center gap-2">
+                  <Zap className="w-4 h-4" />
+                  {"Ver Tabla en Vivo"}
+                </Link>
+              </Button>
               <Button
                 variant="outline"
                 className="flex-1 sm:flex-none border-[#B78B1E] text-[#B78B1E] hover:bg-[#B78B1E] hover:text-[#0B0B0F] bg-transparent"

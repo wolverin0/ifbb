@@ -64,6 +64,12 @@ export function Navigation() {
               {"Atletas"}
             </Link>
             <Link
+              href="/equipos"
+              className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
+            >
+              {"Equipos"}
+            </Link>
+            <Link
               href="/noticias"
               className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
             >
@@ -159,6 +165,12 @@ export function Navigation() {
                 className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
               >
                 {"Atletas"}
+              </Link>
+              <Link
+                href="/equipos"
+                className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
+              >
+                {"Equipos"}
               </Link>
               <Link
                 href="/noticias"
