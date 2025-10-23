@@ -176,19 +176,21 @@ export default function ReglasPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-[#8B5CF6] to-[#6366F1] text-white py-20">
-        <div className="container mx-auto px-4">
+      <section className="relative pt-32 pb-16 overflow-hidden">
+        <div className="absolute inset-0 spotlight-gradient" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center gap-4 mb-6">
-            <BookOpen className="w-12 h-12" />
-            <h1 className="text-5xl md:text-6xl font-bold">Reglamento Oficial IFBB</h1>
+            <BookOpen className="w-12 h-12 text-[#B78B1E]" />
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground">Reglamento Oficial IFBB</h1>
           </div>
-          <p className="text-xl md:text-2xl max-w-3xl">
+          <p className="text-xl md:text-2xl max-w-3xl text-muted-foreground">
             Consultá las reglas oficiales de la Federación Internacional de Fisicoculturismo y Fitness
             para todas las categorías de competencia.
           </p>
         </div>
-      </div>
+      </section>
 
       <div className="container mx-auto px-4 py-16">
         {/* Introduction */}

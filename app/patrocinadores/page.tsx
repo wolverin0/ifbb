@@ -70,16 +70,18 @@ export default function PatrocinadoresPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
+
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-[#B78B1E] to-[#F59E0B] text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Nuestros Patrocinadores</h1>
-          <p className="text-xl md:text-2xl max-w-3xl">
+      <section className="relative pt-32 pb-16 overflow-hidden">
+        <div className="absolute inset-0 spotlight-gradient" />
+        <div className="container mx-auto px-4 relative z-10">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">Nuestros Patrocinadores</h1>
+          <p className="text-xl md:text-2xl max-w-3xl text-muted-foreground">
             Gracias a nuestros patrocinadores, podemos ofrecer eventos de clase mundial
             y apoyar el crecimiento del fisicoculturismo en Argentina.
           </p>
         </div>
-      </div>
+      </section>
 
       <div className="container mx-auto px-4 py-16">
         {/* Gold Sponsors */}
