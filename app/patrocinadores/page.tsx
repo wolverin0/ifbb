@@ -1,3 +1,5 @@
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Building2, Award, Trophy } from "lucide-react";
@@ -66,7 +68,8 @@ export default function PatrocinadoresPage() {
   const bronzeSponsors = sponsors.filter(s => s.tier === 'Bronze');
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <div className="min-h-screen bg-background">
+      <Navigation />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-[#B78B1E] to-[#F59E0B] text-white py-20">
         <div className="container mx-auto px-4">
@@ -215,6 +218,8 @@ export default function PatrocinadoresPage() {
           </a>
         </section>
       </div>
+
+      <Footer />
     </div>
   );
 }

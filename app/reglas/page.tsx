@@ -1,3 +1,5 @@
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Download, FileText, BookOpen } from "lucide-react";
@@ -172,7 +174,8 @@ const ruleCategories = [
 
 export default function ReglasPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <div className="min-h-screen bg-background">
+      <Navigation />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-[#8B5CF6] to-[#6366F1] text-white py-20">
         <div className="container mx-auto px-4">
@@ -257,6 +260,8 @@ export default function ReglasPage() {
           </CardContent>
         </Card>
       </div>
+
+      <Footer />
     </div>
   );
 }

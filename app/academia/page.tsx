@@ -1,3 +1,5 @@
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -95,7 +97,8 @@ const testimonials = [
 
 export default function AcademiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <div className="min-h-screen bg-background">
+      <Navigation />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white py-20">
         <div className="container mx-auto px-4">
@@ -380,6 +383,8 @@ export default function AcademiaPage() {
           </CardContent>
         </Card>
       </div>
+
+      <Footer />
     </div>
   );
 }
