@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Building2, Award, Trophy } from "lucide-react";
+import Image from "next/image";
 
 const sponsors = [
   {
@@ -9,7 +10,7 @@ const sponsors = [
     tier: 'Gold',
     description: 'Cadena líder de gimnasios en Argentina con más de 50 sucursales en todo el país.',
     website: 'https://megathlon.com.ar',
-    logo: '/sponsors/megathlon-logo.png',
+    logo: '/sponsors/megathlon-logo.svg',
   },
   {
     id: '2',
@@ -17,7 +18,7 @@ const sponsors = [
     tier: 'Gold',
     description: 'Suplementos deportivos y nutrición especializada para atletas de alto rendimiento.',
     website: 'https://starnutrition.com.ar',
-    logo: '/sponsors/star-nutrition-logo.png',
+    logo: '/sponsors/starnutrition-logo.svg',
   },
   {
     id: '3',
@@ -25,7 +26,7 @@ const sponsors = [
     tier: 'Silver',
     description: 'Red de gimnasios premium con equipamiento de última generación.',
     website: 'https://gfitness.com.ar',
-    logo: '/sponsors/gfitness-logo.png',
+    logo: '/sponsors/gfitness-logo.svg',
   },
   {
     id: '4',
@@ -33,7 +34,7 @@ const sponsors = [
     tier: 'Silver',
     description: 'Marca internacional de suplementación deportiva de calidad premium.',
     website: 'https://bsnonline.com',
-    logo: '/sponsors/bsn-logo.png',
+    logo: '/sponsors/bsn-logo.svg',
   },
   {
     id: '5',
@@ -41,7 +42,7 @@ const sponsors = [
     tier: 'Silver',
     description: 'Suplementos científicamente formulados para máximo rendimiento.',
     website: 'https://muscletech.com',
-    logo: '/sponsors/muscletech-logo.png',
+    logo: '/sponsors/muscletech-logo.svg',
   },
   {
     id: '6',
@@ -49,7 +50,7 @@ const sponsors = [
     tier: 'Bronze',
     description: 'Suplementos y nutrición deportiva accesible para todos los atletas.',
     website: 'https://enasport.com.ar',
-    logo: '/sponsors/enasport-logo.png',
+    logo: '/sponsors/enasport-logo.svg',
   },
 ];
 
@@ -91,24 +92,32 @@ export default function PatrocinadoresPage() {
                 return (
                   <Card key={sponsor.id} className="hover:shadow-xl transition-shadow bg-gradient-to-br from-card to-muted/10 border-amber-600/30">
                     <CardContent className="p-8">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold mb-2">{sponsor.name}</h3>
-                          <Badge className={`${tierConfig.bgColor} ${tierConfig.textColor} border-0`}>
-                            {sponsor.tier}
-                          </Badge>
-                        </div>
-                        <tierConfig.icon className={`w-12 h-12 bg-gradient-to-br ${tierConfig.color} bg-clip-text text-transparent`} />
+                      <div className="flex items-center justify-center mb-6 h-24">
+                        <Image
+                          src={sponsor.logo}
+                          alt={`${sponsor.name} logo`}
+                          width={200}
+                          height={80}
+                          className="object-contain"
+                        />
                       </div>
-                      <p className="text-muted-foreground mb-4">{sponsor.description}</p>
-                      <a
-                        href={sponsor.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-amber-600 hover:text-amber-700 font-semibold"
-                      >
-                        Visitar sitio web →
-                      </a>
+                      <div className="text-center mb-4">
+                        <Badge className={`${tierConfig.bgColor} ${tierConfig.textColor} border-0`}>
+                          <tierConfig.icon className="w-3 h-3 mr-1 inline" />
+                          {sponsor.tier}
+                        </Badge>
+                      </div>
+                      <p className="text-muted-foreground text-center mb-4">{sponsor.description}</p>
+                      <div className="text-center">
+                        <a
+                          href={sponsor.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-amber-600 hover:text-amber-700 font-semibold"
+                        >
+                          Visitar sitio web →
+                        </a>
+                      </div>
                     </CardContent>
                   </Card>
                 );

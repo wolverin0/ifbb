@@ -6,6 +6,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { FAQSection } from "@/components/faq-section"
 import { WhatsAppContact } from "@/components/whatsapp-contact"
 import { DemoAccessSection } from "@/components/demo-access-section"
+import { SponsorBanner } from "@/components/sponsor-banner"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Trophy, ImageIcon, ArrowRight, Play, Tv } from "lucide-react"
@@ -127,6 +128,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Sponsor Banner */}
+      <SponsorBanner />
 
       {/* Upcoming Events Section */}
       <section className="py-20">
