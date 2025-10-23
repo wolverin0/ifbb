@@ -64,10 +64,10 @@ export function Navigation() {
               {"Atletas"}
             </Link>
             <Link
-              href="/equipos"
+              href="/patrocinadores"
               className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
             >
-              {"Equipos"}
+              {"Patrocinadores"}
             </Link>
             <Link
               href="/demo"
@@ -173,10 +173,10 @@ export function Navigation() {
                 {"Atletas"}
               </Link>
               <Link
-                href="/equipos"
+                href="/patrocinadores"
                 className="text-sm font-medium text-foreground hover:text-[#B78B1E] transition-colors duration-200"
               >
-                {"Equipos"}
+                {"Patrocinadores"}
               </Link>
               <Link
                 href="/demo"
