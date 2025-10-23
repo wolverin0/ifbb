@@ -144,23 +144,31 @@ export default function PatrocinadoresPage() {
                 return (
                   <Card key={sponsor.id} className="hover:shadow-lg transition-shadow bg-gradient-to-br from-card to-muted/10 border-gray-600/20">
                     <CardContent className="p-6">
-                      <div className="flex items-start justify-between mb-3">
-                        <div>
-                          <h3 className="text-xl font-bold mb-2">{sponsor.name}</h3>
-                          <Badge className={`${tierConfig.bgColor} ${tierConfig.textColor} border-0 text-xs`}>
-                            {sponsor.tier}
-                          </Badge>
-                        </div>
+                      <div className="flex items-center justify-center mb-4 h-20">
+                        <Image
+                          src={sponsor.logo}
+                          alt={`${sponsor.name} logo`}
+                          width={150}
+                          height={60}
+                          className="object-contain"
+                        />
                       </div>
-                      <p className="text-muted-foreground text-sm mb-3">{sponsor.description}</p>
-                      <a
-                        href={sponsor.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-gray-700 font-semibold text-sm"
-                      >
-                        Visitar sitio →
-                      </a>
+                      <div className="text-center mb-3">
+                        <Badge className={`${tierConfig.bgColor} ${tierConfig.textColor} border-0 text-xs`}>
+                          {sponsor.tier}
+                        </Badge>
+                      </div>
+                      <p className="text-muted-foreground text-sm text-center mb-3">{sponsor.description}</p>
+                      <div className="text-center">
+                        <a
+                          href={sponsor.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-600 hover:text-gray-700 font-semibold text-sm"
+                        >
+                          Visitar sitio →
+                        </a>
+                      </div>
                     </CardContent>
                   </Card>
                 );
@@ -182,21 +190,31 @@ export default function PatrocinadoresPage() {
                 return (
                   <Card key={sponsor.id} className="hover:shadow-md transition-shadow bg-gradient-to-br from-card to-muted/10 border-orange-600/20">
                     <CardContent className="p-4">
-                      <div className="mb-2">
-                        <h3 className="text-lg font-bold mb-1">{sponsor.name}</h3>
+                      <div className="flex items-center justify-center mb-3 h-16">
+                        <Image
+                          src={sponsor.logo}
+                          alt={`${sponsor.name} logo`}
+                          width={120}
+                          height={50}
+                          className="object-contain"
+                        />
+                      </div>
+                      <div className="text-center mb-2">
                         <Badge className={`${tierConfig.bgColor} ${tierConfig.textColor} border-0 text-xs`}>
                           {sponsor.tier}
                         </Badge>
                       </div>
-                      <p className="text-muted-foreground text-xs mb-2 line-clamp-2">{sponsor.description}</p>
-                      <a
-                        href={sponsor.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-orange-700 hover:text-orange-800 font-semibold text-xs"
-                      >
-                        Visitar →
-                      </a>
+                      <p className="text-muted-foreground text-xs text-center mb-2 line-clamp-2">{sponsor.description}</p>
+                      <div className="text-center">
+                        <a
+                          href={sponsor.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-orange-700 hover:text-orange-800 font-semibold text-xs"
+                        >
+                          Visitar →
+                        </a>
+                      </div>
                     </CardContent>
                   </Card>
                 );
