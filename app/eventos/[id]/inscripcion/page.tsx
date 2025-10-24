@@ -483,15 +483,15 @@ export default function EventRegistrationPage({ params }: { params: { id: string
             </Card>
 
             {/* Actions */}
-            <div className="flex gap-4">
+            <div className="btn-group-responsive">
               <Button
                 variant="outline"
-                className="flex-1 border-[#B78B1E] text-[#B78B1E] hover:bg-[#B78B1E]/10"
+                className="border-[#B78B1E] text-[#B78B1E] hover:bg-[#B78B1E]/10 sm:flex-1"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Descargar Comprobante
               </Button>
-              <Link href="/dashboard/mis-eventos" className="flex-1">
+              <Link href="/dashboard/mis-eventos" className="sm:flex-1">
                 <Button className="w-full bg-gradient-to-r from-[#B78B1E] to-[#FFD700] text-[#0B0B0F] font-semibold hover:shadow-lg hover:shadow-[#B78B1E]/50">
                   <Home className="w-4 h-4 mr-2" />
                   Mis Eventos
@@ -1322,10 +1322,10 @@ export default function EventRegistrationPage({ params }: { params: { id: string
         )}
 
         {/* Navigation Buttons */}
-        <div className="max-w-4xl mx-auto flex gap-4 mb-16">
+        <div className="max-w-4xl mx-auto btn-group-responsive mb-16">
           <Button
             variant="outline"
-            className="flex-1 border-[#B78B1E] text-[#B78B1E] hover:bg-[#B78B1E]/10"
+            className="border-[#B78B1E] text-[#B78B1E] hover:bg-[#B78B1E]/10 sm:flex-1"
             onClick={handlePreviousStep}
             disabled={currentStep === 1}
           >
@@ -1335,7 +1335,7 @@ export default function EventRegistrationPage({ params }: { params: { id: string
 
           <Button
             variant="ghost"
-            className="flex-1 text-[#B78B1E] hover:bg-[#B78B1E]/10"
+            className="text-[#B78B1E] hover:bg-[#B78B1E]/10 sm:flex-1"
           >
             <Save className="w-4 h-4 mr-2" />
             Guardar y continuar después
@@ -1344,7 +1344,7 @@ export default function EventRegistrationPage({ params }: { params: { id: string
           <Button
             onClick={handleNextStep}
             disabled={!canProceed[currentStep] || isLoading}
-            className="flex-1 bg-gradient-to-r from-[#B78B1E] to-[#FFD700] text-[#0B0B0F] font-semibold hover:shadow-lg hover:shadow-[#B78B1E]/50"
+            className="bg-gradient-to-r from-[#B78B1E] to-[#FFD700] text-[#0B0B0F] font-semibold hover:shadow-lg hover:shadow-[#B78B1E]/50 sm:flex-1"
           >
             {isLoading ? (
               <>

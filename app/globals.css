@@ -98,6 +98,82 @@
     background-clip: text;
   }
 
+  /*
+   * Responsive Button Groups
+   * Use on button containers to automatically stack on mobile
+   */
+  .btn-group-responsive {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    .btn-group-responsive {
+      flex-direction: column;
+    }
+
+    .btn-group-responsive > * {
+      width: 100% !important;
+      flex: none !important;
+    }
+  }
+
+  /*
+   * Mobile Stack Utility
+   * Forces flex containers to stack vertically on mobile
+   */
+  .mobile-stack {
+    display: flex;
+  }
+
+  @media (max-width: 640px) {
+    .mobile-stack {
+      flex-direction: column;
+    }
+  }
+
+  /*
+   * Responsive Container
+   * Adds proper padding and prevents horizontal overflow
+   */
+  .responsive-container {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .responsive-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  /*
+   * Responsive Grid
+   * 1 column on mobile, multiple on larger screens
+   */
+  .responsive-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .responsive-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .responsive-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
   .text-gradient-amethyst {
     background: linear-gradient(to bottom right, var(--color-amethyst), #A78BFA);
     -webkit-background-clip: text;
