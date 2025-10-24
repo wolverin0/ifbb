@@ -44,7 +44,7 @@ export function ScoringInterface({ eventId }: ScoringInterfaceProps) {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col bg-gradient-to-br from-background via-slate-50 to-background">
+    <div className="w-full min-h-screen flex flex-col bg-gradient-to-br from-background via-background to-amethyst/5">
       {/* Header */}
       <ScoringHeader eventId={eventId} />
 
