@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, Calendar, Users, BarChart, DollarSign, Settings, LogOut, Music, Menu, X } from "lucide-react"
+import { Home, Calendar, Users, BarChart, DollarSign, Settings, LogOut, Music, Menu, ChevronLeft } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useState } from "react"
 
@@ -23,18 +23,16 @@ export function AdminSidebar() {
 
   return (
     <>
-      {/* Mobile Menu Button - Fixed at top */}
-      <button
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-card border border-border rounded-lg shadow-lg"
-        aria-label="Toggle menu"
-      >
-        {isMobileMenuOpen ? (
-          <X className="w-6 h-6" />
-        ) : (
+      {/* Mobile Menu Button - Fixed at top, only show when sidebar is closed */}
+      {!isMobileMenuOpen && (
+        <button
+          onClick={() => setIsMobileMenuOpen(true)}
+          className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-card border border-border rounded-lg shadow-lg"
+          aria-label="Open menu"
+        >
           <Menu className="w-6 h-6" />
-        )}
-      </button>
+        </button>
+      )}
 
       {/* Backdrop overlay for mobile */}
       {isMobileMenuOpen && (
@@ -53,7 +51,7 @@ export function AdminSidebar() {
           isMobileMenuOpen ? "translate-x-0" : "max-lg:-translate-x-full"
         )}
       >
-        <div className="h-20 flex items-center px-6 border-b border-border">
+        <div className="h-20 flex items-center justify-between px-6 border-b border-border">
           <Link href="/" className="flex items-center gap-3 group" onClick={closeMobileMenu}>
             <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-lg flex items-center justify-center">
               <span className="text-xl font-bold text-white">A</span>
@@ -62,6 +60,15 @@ export function AdminSidebar() {
               <div className="text-lg font-bold text-red-500">Panel de Admin</div>
             </div>
           </Link>
+
+          {/* Close button inside sidebar on mobile */}
+          <button
+            onClick={closeMobileMenu}
+            className="lg:hidden p-2 hover:bg-muted/50 rounded-lg transition-colors"
+            aria-label="Close menu"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
         </div>
         <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
           {navItems.map((item) => (
