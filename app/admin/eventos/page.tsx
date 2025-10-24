@@ -35,17 +35,21 @@ export default function AdminEventosPage() {
 
   return (
     <div>
-      <header className="mb-8 flex items-center justify-between">
+      {/* Add left padding on mobile to avoid hamburger menu overlap */}
+      <header className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pl-16 lg:pl-0">
         <div>
-          <h1 className="text-4xl font-bold text-foreground">Gestionar Eventos</h1>
-          <p className="text-muted-foreground">Creá, editá y administrá todos los eventos de la federación.</p>
+          <h1 className="text-2xl sm:text-4xl font-bold text-foreground">Gestionar Eventos</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">Creá, editá y administrá todos los eventos de la federación.</p>
         </div>
-        <Button>Crear Nuevo Evento</Button>
+        <Button className="self-start sm:self-auto">Crear Nuevo Evento</Button>
       </header>
 
       <Card className="bg-card">
         <CardContent>
-          <Table>
+          {/* Wrap table in scrollable container for mobile */}
+          <div className="overflow-x-auto -mx-6 sm:mx-0">
+            <div className="inline-block min-w-full align-middle px-6 sm:px-0">
+              <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Nombre del Evento</TableHead>
@@ -74,7 +78,9 @@ export default function AdminEventosPage() {
                 </TableRow>
               ))}
             </TableBody>
-          </Table>
+              </Table>
+            </div>
+          </div>
         </CardContent>
       </Card>
     </div>

@@ -41,8 +41,10 @@ export default function SponsorshipDashboard() {
     <div className="flex min-h-screen bg-background">
       <AdminSidebar />
       <main className="flex-1 p-8">
-        <h1 className="text-4xl font-bold text-foreground mb-2">Patrocinadores</h1>
-        <p className="text-muted-foreground mb-8">Gestiona patrocinadores y visualiza el ROI de cada uno</p>
+        <header className="mb-8 pl-16 lg:pl-0">
+          <h1 className="text-2xl sm:text-4xl font-bold text-foreground">Patrocinadores</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">Gestiona patrocinadores y visualiza el ROI de cada uno</p>
+        </header>
       </main>
     </div>
   )

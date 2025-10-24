@@ -315,9 +315,9 @@ export default function CancionesPage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <header className="space-y-2">
-        <h1 className="text-4xl font-bold text-foreground">Aprobación de Canciones</h1>
-        <p className="text-muted-foreground">Revisa, aprueba o rechaza canciones subidas por atletas.</p>
+      <header className="space-y-2 pl-16 lg:pl-0">
+        <h1 className="text-2xl sm:text-4xl font-bold text-foreground">Aprobación de Canciones</h1>
+        <p className="text-sm sm:text-base text-muted-foreground">Revisa, aprueba o rechaza canciones subidas por atletas.</p>
       </header>
 
       {/* Stats Cards */}
