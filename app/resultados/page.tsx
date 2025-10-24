@@ -72,7 +72,9 @@ export default function ResultadosPage() {
               </Select>
             </CardHeader>
             <CardContent>
-              <Table>
+              <div className="overflow-x-auto -mx-6 sm:mx-0">
+                <div className="inline-block min-w-full align-middle px-6 sm:px-0">
+                  <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead className="w-[80px]">Puesto</TableHead>
@@ -100,6 +102,8 @@ export default function ResultadosPage() {
                   ))}
                 </TableBody>
               </Table>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
