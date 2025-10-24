@@ -72,7 +72,42 @@ export default function ResultadosPage() {
               </Select>
             </CardHeader>
             <CardContent>
-              <div className="overflow-x-auto -mx-6 sm:mx-0">
+              {/* Mobile Card Layout - visible on small screens only */}
+              <div className="sm:hidden space-y-4">
+                {leaderboard.map((row) => (
+                  <Card key={row.number} className={`border-2 ${row.place <= 3 ? 'border-gold' : ''}`}>
+                    <CardContent className="pt-6">
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between mb-3">
+                          <div>
+                            <p className="text-xs text-muted-foreground">Puesto</p>
+                            <p className="font-bold text-3xl text-gold">{row.place}</p>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-xs text-muted-foreground">N° {row.number}</p>
+                            <p className="font-bold text-xl">{row.name}</p>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-5 gap-2 pt-3 border-t">
+                          {row.scores.map((score, i) => (
+                            <div key={i} className="text-center">
+                              <p className="text-xs text-muted-foreground">J{i + 1}</p>
+                              <p className="font-semibold text-lg">{score}</p>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="pt-3 border-t text-center">
+                          <p className="text-xs text-muted-foreground">Puntuación Total</p>
+                          <p className="font-bold text-2xl text-primary">{row.total}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Desktop Table Layout - hidden on small screens */}
+              <div className="hidden sm:block overflow-x-auto -mx-6 sm:mx-0">
                 <div className="inline-block min-w-full align-middle px-6 sm:px-0">
                   <Table>
                 <TableHeader>

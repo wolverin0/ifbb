@@ -509,7 +509,7 @@ export default function EventRegistrationPage({ params }: { params: { id: string
     <div className="min-h-screen bg-gradient-to-b from-[#0B0B0F] to-[#1a1a1f]">
       <Navigation />
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 pt-24 pb-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">

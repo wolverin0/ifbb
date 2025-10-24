@@ -176,7 +176,6 @@ export default function DemoPage() {
     { title: "Dashboard Entrenador", link: "/coach/dashboard", icon: GraduationCap },
     { title: "Eventos", link: "/eventos", icon: Trophy },
     { title: "Atletas", link: "/atletas", icon: Users },
-    { title: "Equipos", link: "/equipos", icon: Building2 },
   ];
 
   return (

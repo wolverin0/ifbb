@@ -129,7 +129,45 @@ export default function MisResultadosPage() {
           <CardTitle>Historial de Competencias</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
+          {/* Mobile Card Layout - visible on small screens only */}
+          <div className="sm:hidden space-y-4">
+            {results.map((result) => (
+              <Card key={result.id} className="border-2">
+                <CardContent className="pt-6">
+                  <div className="space-y-3">
+                    <div>
+                      <h3 className="font-bold text-lg mb-1">{result.event}</h3>
+                      <p className="text-sm text-muted-foreground">{result.date}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{result.category}</p>
+                    </div>
+                    <div className="flex items-center justify-between pt-2 border-t">
+                      <span className="text-sm text-muted-foreground">Puesto:</span>
+                      {getMedalBadge(result.placing)}
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">Puntuación:</span>
+                      <span className="font-semibold text-primary">{result.score}</span>
+                    </div>
+                    <div className="pt-2 border-t btn-group-responsive">
+                      {result.placing <= 3 && (
+                        <Button variant="outline" size="sm" onClick={() => handleViewCertificate(result)} className="sm:flex-1">
+                          <Eye className="h-4 w-4 mr-2" />
+                          Ver Certificado
+                        </Button>
+                      )}
+                      <Button variant="outline" size="sm" onClick={() => handleDownloadScoreSheet(result)} className="sm:flex-1">
+                        <FileText className="h-4 w-4 mr-2" />
+                        Descargar Puntajes
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Desktop Table Layout - hidden on small screens */}
+          <div className="hidden sm:block overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>

@@ -175,13 +175,13 @@ export default function ComparacionPage() {
         {/* Comparison Header */}
         <Card className="bg-gradient-to-r from-slate-800 to-slate-900 border-slate-700">
           <CardContent className="p-6">
-            <div className="grid grid-cols-2 gap-6 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center">
               <div>
                 <p className="text-sm text-slate-400 mb-2">Tu Desempeño</p>
                 <h2 className="text-3xl font-bold text-white mb-1">Posición #{comparisonData.yourPlacing}</h2>
                 <Badge variant="secondary">Tu Puntuación</Badge>
               </div>
-              <div className="border-l border-slate-700"></div>
+              <div className="border-l border-slate-700 hidden sm:block"></div>
               <div>
                 <p className="text-sm text-slate-400 mb-2">Ganador de la Categoría</p>
                 <h2 className="text-3xl font-bold text-gold mb-1">{comparisonData.winnerName}</h2>
@@ -337,7 +337,7 @@ export default function ComparacionPage() {
                 })}
               </div>
 
-              <div className="grid grid-cols-3 gap-4 text-center">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                 <div className="p-3 bg-muted/50 rounded-lg">
                   <p className="text-xs text-muted-foreground mb-1">Puntaje Máximo</p>
                   <p className="text-2xl font-bold text-gold">{highestScore}</p>

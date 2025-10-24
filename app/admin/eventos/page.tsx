@@ -46,40 +46,74 @@ export default function AdminEventosPage() {
 
       <Card className="bg-card">
         <CardContent>
-          {/* Wrap table in scrollable container for mobile */}
-          <div className="overflow-x-auto -mx-6 sm:mx-0">
-            <div className="inline-block min-w-full align-middle px-6 sm:px-0">
-              <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Nombre del Evento</TableHead>
-                <TableHead>Fecha</TableHead>
-                <TableHead>Estado</TableHead>
-                <TableHead>Inscriptos</TableHead>
-                <TableHead>Ingresos</TableHead>
-                <TableHead className="text-right">Acciones</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {events.map((event) => (
-                <TableRow key={event.name}>
-                  <TableCell className="font-medium">{event.name}</TableCell>
-                  <TableCell>{event.date}</TableCell>
-                  <TableCell>
-                    <Badge variant={event.statusVariant as any}>{event.status}</Badge>
-                  </TableCell>
-                  <TableCell>{event.registrations}</TableCell>
-                  <TableCell>{event.revenue}</TableCell>
-                  <TableCell className="text-right">
-                    <Button variant="ghost" size="icon">
-                      <MoreHorizontal className="h-4 w-4" />
-                    </Button>
-                  </TableCell>
+          {/* Mobile Card Layout - visible on small screens only */}
+          <div className="sm:hidden space-y-4">
+            {events.map((event) => (
+              <Card key={event.name} className="border-2">
+                <CardContent className="pt-6">
+                  <div className="space-y-3">
+                    <div>
+                      <h3 className="font-bold text-lg mb-1">{event.name}</h3>
+                      <p className="text-sm text-muted-foreground">{event.date}</p>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">Estado:</span>
+                      <Badge variant={event.statusVariant as any}>{event.status}</Badge>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4 pt-2 border-t">
+                      <div>
+                        <p className="text-xs text-muted-foreground">Inscriptos</p>
+                        <p className="font-semibold">{event.registrations}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground">Ingresos</p>
+                        <p className="font-semibold">{event.revenue}</p>
+                      </div>
+                    </div>
+                    <div className="pt-2 border-t">
+                      <Button variant="ghost" size="sm" className="w-full">
+                        <MoreHorizontal className="h-4 w-4 mr-2" />
+                        Ver más opciones
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Desktop Table Layout - hidden on small screens */}
+          <div className="hidden sm:block overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Nombre del Evento</TableHead>
+                  <TableHead>Fecha</TableHead>
+                  <TableHead>Estado</TableHead>
+                  <TableHead>Inscriptos</TableHead>
+                  <TableHead>Ingresos</TableHead>
+                  <TableHead className="text-right">Acciones</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-              </Table>
-            </div>
+              </TableHeader>
+              <TableBody>
+                {events.map((event) => (
+                  <TableRow key={event.name}>
+                    <TableCell className="font-medium">{event.name}</TableCell>
+                    <TableCell>{event.date}</TableCell>
+                    <TableCell>
+                      <Badge variant={event.statusVariant as any}>{event.status}</Badge>
+                    </TableCell>
+                    <TableCell>{event.registrations}</TableCell>
+                    <TableCell>{event.revenue}</TableCell>
+                    <TableCell className="text-right">
+                      <Button variant="ghost" size="icon">
+                        <MoreHorizontal className="h-4 w-4" />
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         </CardContent>
       </Card>
