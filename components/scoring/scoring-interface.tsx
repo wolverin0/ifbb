@@ -126,7 +126,10 @@ export function ScoringInterface({ eventId }: ScoringInterfaceProps) {
 
           {/* Category Info Card */}
           {currentCategory && (
-            <Card className="glass-card border border-border/30 p-4 lg:p-6">
+            <Card
+              className="backdrop-blur-lg border border-border/30 p-4 lg:p-6"
+              style={{ backgroundColor: 'rgba(15, 23, 42, 0.5)' }}
+            >
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div>
                   <h1 className="text-2xl lg:text-3xl font-bold text-gradient-gold mb-1 lg:mb-2">

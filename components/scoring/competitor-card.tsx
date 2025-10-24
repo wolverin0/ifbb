@@ -42,7 +42,8 @@ export function CompetitorCard({
 
   return (
     <Card
-      className={`glass-card border overflow-hidden flex flex-col h-full transition-all duration-200 ${
+      style={{ backgroundColor: 'rgba(15, 23, 42, 0.8)' }}
+      className={`backdrop-blur-lg border overflow-hidden flex flex-col h-full transition-all duration-200 ${
         isLocked
           ? 'opacity-75 pointer-events-none'
           : 'hover:shadow-lg hover:-translate-y-1'
@@ -56,8 +57,8 @@ export function CompetitorCard({
       )}
 
       {/* Competitor Photo */}
-      <div className="relative w-full aspect-square bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-slate-400 opacity-20">
+      <div className="relative w-full aspect-square bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-slate-600 opacity-30">
           {competitor.number}
         </div>
         {competitor.photoUrl && (

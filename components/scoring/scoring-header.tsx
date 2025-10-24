@@ -31,7 +31,10 @@ export function ScoringHeader({ eventId }: ScoringHeaderProps) {
   }, []);
 
   return (
-    <Card className="glass-card border-b border-border/20 rounded-none px-8 py-4 flex items-center justify-between">
+    <Card
+      className="backdrop-blur-lg border-b border-border/20 rounded-none px-8 py-4 flex items-center justify-between"
+      style={{ backgroundColor: 'rgba(15, 23, 42, 0.5)' }}
+    >
       <div className="flex items-center gap-4">
         <Link
           href={`/admin/eventos`}
