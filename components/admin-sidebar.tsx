@@ -47,10 +47,10 @@ export function AdminSidebar() {
       {/* Sidebar - Hidden on mobile, shown as overlay when menu open */}
       <aside
         className={cn(
-          "w-64 flex-shrink-0 bg-card border-r border-border flex flex-col",
-          "lg:relative lg:translate-x-0",
-          "fixed top-0 left-0 h-full z-40 transition-transform duration-300",
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+          "w-64 flex-shrink-0 bg-card border-r border-border flex flex-col transition-transform duration-300",
+          "fixed top-0 left-0 h-full z-40",
+          "lg:relative lg:z-auto lg:translate-x-0",
+          isMobileMenuOpen ? "translate-x-0" : "max-lg:-translate-x-full"
         )}
       >
         <div className="h-20 flex items-center px-6 border-b border-border">
